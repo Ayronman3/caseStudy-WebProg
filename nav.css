@@ -1,0 +1,70 @@
+
+nav{
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  height: 90px;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 4px;
+  /* box-shadow: 0px 8px 8px -3px rgba(120,115,115,0.63); */
+  transition: box-shadow 0.3s ease;
+  position: fixed;
+  background-color: white;
+  z-index: 100;
+}
+#logo{
+  width: 160px;
+}
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  gap: 30px;
+  
+}
+nav ul li a{
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  padding-bottom: 5px;
+  transition: all;
+  transition-duration: 0.5s;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+a.active{
+  color: rgb(139, 234, 202);
+  transform: scale(1.2);
+}
+nav ul li a:hover{
+  border-bottom: 2px solid black;
+}
+.buttons{
+  display: flex;
+  width: 300px;
+  gap: 10px;
+}
+#login, #getstarted{
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+#getstarted{
+  width: 150px;
+  border: 1px solid gray;
+}
+#login:hover{
+  transition: ease-in 0.15s;
+  border: 1px solid black;
+}
+#getstarted:hover{
+  transition: ease-in 0.15s;
+  background-color: rgb(28, 8, 8);
+  color: white;
+}

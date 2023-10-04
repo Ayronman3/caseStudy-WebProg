@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Length of Text Input</title>
+</head>
+<body>
+    <input type="text" id="textInput" placeholder="Enter text">
+    <p>Text Length: <span id="textLength">0</span></p>
+
+    <script>
+        // Get a reference to the text input and the span element for displaying text length
+        const textInput = document.getElementById('textInput');
+        const textLengthSpan = document.getElementById('textLength');
+
+        // Add an input event listener to the text input
+        textInput.addEventListener('input', function () {
+            const inputValue = textInput.value;
+            const textLength = inputValue.length;
+            textLengthSpan.textContent = textLength; // Update the text length in the span
+        });
+    </script>
+</body>
+</html>
