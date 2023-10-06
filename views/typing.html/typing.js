@@ -56,13 +56,13 @@ userInput.addEventListener("keydown", function (event) {
         console.log("spancount: " + spanCount + " charCount: " + charCount);
         if(currentChar===charCount-1){
           console.log("hello!");
-          spanElement.className+="-current";
+          spanElement.className="each-letter-current";
         }
         currentChar+=1;
         spanCount+=1;
         if(spanCount === charCount){
           spanElement.className = "each-letter"
-          spanElement.className+="-correct";      
+          spanElement.className="each-letter-correct";      
         }
         
         
@@ -74,7 +74,7 @@ userInput.addEventListener("keydown", function (event) {
         spanCount+=1;
         if(spanCount === charCount){
           spanElement.className = "each-letter"
-          spanElement.className+="-wrong";
+          spanElement.className="each-letter--wrong";
         }
         
       });
