@@ -51,7 +51,9 @@ userInput.addEventListener("keydown", function (event) {
     charCount -= 1;
     currentChar -= 1;
   }
-
+  if(event.key ===" "){
+    userInput.value = "";
+  }
   // console.log("validate");
 
 
