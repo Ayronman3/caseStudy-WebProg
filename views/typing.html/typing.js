@@ -3,18 +3,29 @@
 // MAKE THE PAGE NOT CLIKABLE
 // CREATE A RESULT DIV
 
-const quoteText =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nihil corporis tempora unde saepe minus fugit? Ab facere id molestiae.";
+const vocabBox = ["Apple", "Banana", "Cherry", "Dog", "Elephant", "Feline", "Grape", "House", "Internet", "Jigsaw",
+"Kite", "Lemon", "Mountain", "Notebook", "Octopus", "Penguin", "Quotation", "Rainbow", "Sunflower", "Table",
+"Umbrella", "Volcano", "Watermelon", "Xylophone", "Yellow", "Zebra", "Butterfly", "Dancing", "Elephant", "Forest",
+"Guitar", "Happy", "Island", "Jellyfish", "Kangaroo", "Lighthouse", "Mushroom", "Nectar", "Ocean", "Penguin",
+"Quokka", "Rainbow", "Sunflower", "Tiger", "Unicorn", "Velvet", "Waterfall", "Xylophone", "Yoga", "Zucchini",
+"Avocado", "Beach", "Computer", "Dolphin", "Elephant", "Flamingo", "Guitar", "Hiking", "Ice Cream", "Jaguar",
+"Kangaroo", "Lighthouse", "Moonlight", "Nature", "Ocean", "Parrot", "Quilt", "Rainbow", "Strawberry", "Tree",
+"Umbrella", "Violin", "Waterfall", "X-ray", "Yoga", "Zephyr", "Apple", "Banana", "Cherry", "Dog", "Elephant",
+"Feline", "Grape", "House", "Internet", "Jigsaw", "Kite", "Lemon", "Mountain", "Notebook", "Octopus", "Penguin",
+"Quotation", "Rainbow", "Sunflower", "Table", "Umbrella", "Volcano", "Watermelon", "Xylophone"];
+
+let quoteText = word(vocabBox);
 let userInput = document.getElementById("user-input");
 let quoteContainer = document.getElementById("quote-container");
-let countDown = 10;
+let countDown = 99999;
 let wpm = 0;
-const wordArr = quoteText.split("");
+let wordArr = quoteText.split("");
 var charCount = 0;
 let start = false;
 let timer;
 let customInput = "";
 let currentChar = 0;
+let cpm = 0;
 console.log(wordArr);
 //Spanning Text
 
@@ -46,10 +57,12 @@ userInput.addEventListener("keydown", function (event) {
   }
 
   if(event.key === 'Backspace'){
+    if(charCount>0){
     customInput = customInput.slice(0, -1);
     console.log(customInput)
     charCount -= 1;
     currentChar -= 1;
+    }
   }
   if(event.key ===" "){
     userInput.value = "";
@@ -157,13 +170,23 @@ faqDiv.forEach(function (button, index) {
 
 const updateCounter = () => {
   const countdownDisplay = document.getElementById("timer");
+  const displayWpm = document.getElementById("wpm");
+  const displayCpm = document.getElementById("cpm");
+  const tapNew = document.getElementById("tap");
   countdownDisplay.textContent = countDown;
   countDown--;
   if (countDown < 0) {
     clearInterval(timer);
     overlay();
     wpm = charCount / 5 / (30 / 60);
+    cpm = charCount/0.50;
+    displayCpm.textContent = cpm;
+    displayWpm.textContent = wpm;
     console.log(`This is your WPM:  ${wpm}`);
+    console.log("this is cpm: " + cpm);
+    tapNew.addEventListener("click",function(){
+      location.reload();
+    });
   }
 };
 
@@ -182,3 +205,34 @@ userInput.addEventListener("keydown", function (event) {
     count += 1;
   });
 });
+
+const reset = () =>{
+  wpm = 0;
+  cpm = 0;
+  charCount = 0;
+  currentChar = 0; 
+  start = false;
+  countDown = 4;
+  quoteText = word(vocabBox);
+  wordArr = quoteText.split("");
+  for (var i = 0; i < wordArr.length; i++) {
+    var spanChar = document.createElement("span");
+    spanChar.textContent = wordArr[i];
+  
+    spanChar.className = "each-letter";
+  
+    quoteContainer.appendChild(spanChar);
+  }
+  const overlayDiv = document.getElementById("overlay");
+  overlayDiv.style.display = "none";
+  userInput.disabled = false;
+}
+function word(vocab){
+  let generatedWord = '';
+  for(let i = 0; i < 20; i++){
+    let index = Math.floor(Math.random() * vocab.length);
+    generatedWord = generatedWord + vocab[index].toLowerCase() + " ";
+  }
+  return generatedWord;
+}
+

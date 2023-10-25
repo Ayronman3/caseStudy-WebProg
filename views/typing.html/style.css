@@ -10,7 +10,6 @@ html{
   scroll-behavior: smooth;
   margin: 0;
   background-color: #f5f6fb;
-  z-index: 1;
 }
 .typing-container{
   display: flex;
@@ -53,9 +52,7 @@ html{
   padding: 10px;
   margin-bottom: 15px;
 }
-#quote-text{
-  
-}
+
 #user-input{
   width: 850px;
   height: 50px;
@@ -90,8 +87,6 @@ html{
   position: fixed;
 } */
 
-.typing-info {
-}
 .info-container {
   display: flex;
   flex-direction: column;
@@ -103,7 +98,10 @@ html{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
 }
+
 .title {
   font-size: 40px;
   font-weight: 600;
@@ -144,7 +142,7 @@ for nested styling Note: use space to separate name instead of dash
   } */
 }
 .benefit-Title {
-  font-size: 40px;
+  font-size: 25px;
   text-align: center;
   margin-bottom: 10px;
   font-weight: 600;
@@ -154,15 +152,17 @@ for nested styling Note: use space to separate name instead of dash
 }
 #overlay{
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: transparent;
-  /* backdrop-filter: blur(2px)  saturate(150%) hue-rotate(120deg); Adjust the values as needed */
-  background-color: rgba(0, 0, 0, 0.877); /* Change the bac /* Adjust the blur amount as needed */
-  z-index: 9999; /* Adjust the z-index to make sure it's above other content */
-  pointer-events: none; 
+  /* backdrop-filter: blur(2px)  saturate(150%) hue-rotate(120deg); */
+  background-color: rgba(0, 0, 0, 0.877);
+  z-index: 100; 
   display: none;
 }
 .faq-container{
@@ -171,6 +171,8 @@ for nested styling Note: use space to separate name instead of dash
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .faq-title{
   font-size: 45px;
@@ -256,4 +258,56 @@ for nested styling Note: use space to separate name instead of dash
 }
 #socials-list li{
 list-style: none;
+}
+#table{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  
+}
+#result-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(25, 24, 24);
+  color: white;
+  gap: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  z-index: 101;
+  overflow: hidden;
+  cursor: pointer;
+}
+#resultTitle{
+  font-size: 30px;
+  font-weight: 500;
+}
+#tap{
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(231, 159, 25);
+}
+#cpm,#wpm{
+  font-weight: 700;
+  color: rgb(231, 159, 25);
+  font-size: 25px;
+}
+#closeRes{
+  font-size: 30px;
+  margin: 0;
+  height: 10px;
+  float: right;
+}
+#smallNav{
+  display: none;
+}
+.newNav{
+  display: none;
 }

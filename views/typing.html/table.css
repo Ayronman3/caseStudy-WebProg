@@ -1,0 +1,27 @@
+table{
+  width: 90%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  
+}
+th,td{
+  text-align: center;
+
+  width: 30%;
+  padding: 10px;
+}
+
+#userDp{
+  text-align: right;
+  border: none;
+}
+#user{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#leadTitle{
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}

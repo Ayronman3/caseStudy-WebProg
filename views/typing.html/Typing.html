@@ -4,6 +4,8 @@
     <title>Typing Test</title>
     <link rel="stylesheet" href="../../nav.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="resposive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,17 +29,17 @@
               <ul>
                 <li class="items">
                   <div>
-                    <a href="Typing.html" class="nav-link">Typing Speed Test</a>
+                    <a href="#typing-test" class="nav-link">Home</a>
                   </div>
                 </li>
                 <li class="items">
-                  <a href="../click/click.html" class="nav-link"
-                    >Click Speed Test</a
+                  <a href="#Leaderboard" class="nav-link"
+                    >Leaderboards</a
                   >
                 </li>
                 <li class="items">
-                  <a href="../spacebar/spacebar.html" class="nav-link"
-                    >Spacebar Counter</a
+                  <a href="#FAQ" class="nav-link"
+                    >FAQs</a
                   >
                 </li>
               </ul>
@@ -46,7 +48,47 @@
               <button id="login">Login</button>
               <button id="getstarted">Get Started</button>
             </div>
+           
           </nav>
+        </div>
+        <div id="smallNav">
+          <nav>
+            <div class="logo-container">
+              <img src="../../assets/logo.png" alt="logo" id="logo" />
+            </div>
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </nav>
+           
+        </div>
+        <div class="newNav">
+          <ul>
+            <li class="items">
+              <div>
+                <a href="#typing-test" class="nav-link">Home</a>
+              </div>
+            </li>
+            <li class="items">
+              <a href="#Leaderboard" class="nav-link"
+                >Leaderboards</a
+              >
+            </li>
+            <li class="items">
+              <a href="#FAQ" class="nav-link"
+                >FAQs</a
+              >
+            </li>
+          
+            <li class="items">
+              <a href="">Login</a>
+            </li>
+            <li class="items">
+              <a href="">Get Started</a>
+            </li>
+          </ul>
         </div>
         <section class="type-test">
           <div class="typing-container">
@@ -64,6 +106,29 @@
               placeholder="Type here to start..."
             />
             <p id="result"></p>
+          </div>
+        </section>
+        <section id="Leaderboard">
+          <div id="table">
+            <table>
+              <caption id="leadTitle">LEADERBOARDS</caption>
+              <tr id="Header">
+                <th>Username</th>
+                <th>Speed</th>
+                <th>Time</th>
+              </tr>
+              <tr id="leadData">
+                <td id="userInfo"><div id="user">
+                  <img src="../../assets/icon-python.png" alt="displayed picture"
+                  style="width: 30px;">
+                  <p>username</p>
+                </div>
+              </td>
+              <td>230wpm</td>
+              <td>30 sec</td>
+              </tr>
+            
+            </table>
           </div>
         </section>
         <section class="typing-info">
@@ -214,8 +279,16 @@
           </div>
         </section>
       </div>
-      <div id="overlay"></div>
-      <div id="result-div"></div>
+      <div id="overlay">
+        <div id="result-div">
+          <!-- <h2><p id="closeRes">x</p></h2> -->
+          <p id="resultTitle">Your Score!</p>
+          <p><span id="cpm"></span> Characters per minute!</p>
+          <p><span id="wpm"></span> Words per minute!</p>
+          <p id="tap">Click to continue</p>
+        </div>
+      </div>
+      
       <section class="footer">
         <div class="footer-content">
           <div class="infos">
@@ -266,5 +339,6 @@
     <script src="typing.js"></script>
 
     <script src="../../navFunction.js"></script>
+    <script src="hamburger.js"></script>
   </body>
 </html>

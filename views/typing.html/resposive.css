@@ -1,0 +1,136 @@
+@media (max-width: 768px) {
+  #nav-container{
+    display: none;
+  }
+  #smallNav{
+    display: flex;  
+  }
+  .newNav{
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    width: 100%;
+    height: 200px;
+    position: fixed;
+    background-color: white;
+    left: -100%;
+    transition: 0.3s;
+  }
+  .newNav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .newNav ul li{
+    list-style: none;
+    font-size: 15px;
+  }
+  .newNav ul li a{
+    text-decoration: none;
+    color: black;
+    
+  }
+  .newNav.active{
+    left: 0;
+  }
+  #quote{
+    font-weight: 600;
+    font-size: 30px;
+  }
+  .wpm-container{
+    width: 80%;
+  }
+  #quote-container{
+    width: 80%;
+
+  }
+  .each-letter{
+    font-weight: 500;
+    font-size: 17px;
+  }
+  .each-letter-current{
+    font-size: 17px;
+  }
+  .each-letter-correct{
+    font-size: 17px;
+  }
+  .each-letter-wrong{
+    font-size: 17px;
+  }
+  #user-input{
+    width: 80%;
+  }
+  .title{
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  .title2{
+    font-size: 30px;
+  }
+  .sub-title{
+    font-size: 20px;
+  }
+  .info-content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .benefit{
+    width: 70%;
+  }
+  .faq-title{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .faq-items{
+    width: 250px;
+    height: 20%;
+
+  }
+  .item-title{
+    font-size: 15px;
+    font-weight: 500;
+
+  }
+  .plus {
+    font-size: 20px;
+  }
+  .item-content {
+    width: 250px;
+    height: 80px;
+    font-size: 12px;
+    overflow: hidden;
+  }
+  .footer{
+    padding: 10px;
+    padding-top: 20px;
+  }
+  #logowhite{
+    height: 40px;
+  }
+  #socials .title{
+    font-size: 20px;
+  }
+  .fa-3x{
+    font-size: 20px;
+  }
+  #socials-list{
+    justify-content: center;
+    gap: 10px;
+  }
+  .hamburger{
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+}
