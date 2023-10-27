@@ -19,36 +19,50 @@ quoteContainer.inn
 for(var i = 0; i < wordArr.length; i++){
   var spanChar = document.createElement("span");
   spanChar.textContent = wordArr[i];
-  spanChar.className = "each-letter";
+  
+  if(i === 0){
+    spanChar.className = "each-letter-current";
+  }
+  else{
+    spanChar.className = "each-letter";
+  }
+  
+ 
+  
   quoteContainer.appendChild(spanChar);
 }
 
 //Input Validation
 let eachLetter = document.querySelectorAll(".each-letter");
 userInput.addEventListener("keydown", function (event) {
-  let spanCount = 0;
+  let spanCount = 1;
+  
   if(!start){
      timer = setInterval(updateCounter,1000);
     start = true;
   }
-  if(!(event.key==="Shift") && !event.key.includes("Backspace")){
-    const userTypedText = event.key;
-    console.log("validate");  
-            
+ 
+  if(event.key.length === 1){
+    // console.log("validate");  
     charCount+=1;
-    console.log("UserTyped Text: "+userTypedText);
-    console.log("char Count: " + charCount);
-    console.log(wordArr[charCount]);
+    let currentChar = 0;
+    // console.log("UserTyped Text: "+userTypedText);
+    // console.log("char Count: " + charCount);
+    // console.log(wordArr[charCount]);
+
     if (event.key===wordArr[charCount-1]) {
       userInput.style.backgroundColor = "white";
       eachLetter.forEach(function(spanElement){
-        spanCount+=1;
-        if(spanCount === charCount+1){
-          spanElement.className+="-current";
+        console.log("spancount: " + spanCount + " charCount: " + charCount);
+        if(currentChar===charCount-1){
+          console.log("hello!");
+          spanElement.className="each-letter-current";
         }
+        currentChar+=1;
+        spanCount+=1;
         if(spanCount === charCount){
           spanElement.className = "each-letter"
-          spanElement.className+="-correct";      
+          spanElement.className="each-letter-correct";      
         }
         
         
@@ -59,7 +73,8 @@ userInput.addEventListener("keydown", function (event) {
       eachLetter.forEach(function(spanElement){
         spanCount+=1;
         if(spanCount === charCount){
-          spanElement.className+="-wrong";
+          spanElement.className = "each-letter"
+          spanElement.className="each-letter--wrong";
         }
         
       });
@@ -77,18 +92,11 @@ userInput.addEventListener("keydown", function (event) {
    
     if(charCount>0){
       charCount-=1;
+      indicator(charCount);
       console.log("cahrcount at delete: " + charCount)
       spanCount = 0;
-      eachLetter.forEach(function(spanElement){
-        
-        if(spanCount === charCount){
-          spanElement.className="each-letter";
-        }
-        if(spanCoun)
-        spanCount+=1;
-        
-      });
       //console.log("charcount: " +charCount);
+      
     }
   }
   
@@ -103,7 +111,7 @@ userInput.addEventListener("keydown", function (event) {
   
   console.log("userChar: " + event.key);
   }
-
+  
 );
 
 document.addEventListener('keydown', function(event) {
@@ -153,4 +161,14 @@ const overlay =  () => {
   userInput.disabled = true;
 }
 
-
+let count = 0;
+userInput.addEventListener("keydown", function(event){
+  
+  eachLetter.forEach((character)=>{
+    if(charCount===count){
+      console.log("current charracter: " + character.textContent);   
+    }
+    count+=1;
+  });
+  
+});
